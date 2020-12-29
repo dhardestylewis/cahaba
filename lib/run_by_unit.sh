@@ -112,7 +112,7 @@ echo -e $startDiv"Rasterize Reach Boolean $hucNumber"$stopDiv
 date -u
 Tstart
 [ ! -f $outputHucDataDir/flows_grid_boolean.tif ] && \
-gdal_rasterize -ot Int32 -burn 1 -init 0 -co "COMPRESS=LZW" -co "BIGTIFF=YES" -co "TILED=YES" -te $xmin $ymin $xmax $ymax -ts $ncols $nrows $outputHucDataDir/NHDPlusBurnLineEvent_subset.gpkg $outputHucDataDir/flows_grid_boolean.tif
+gdal_rasterize -ot Int16 -burn 1 -init 0 -co "COMPRESS=LZW" -co "BIGTIFF=YES" -co "TILED=YES" -te $xmin $ymin $xmax $ymax -ts $ncols $nrows $outputHucDataDir/NHDPlusBurnLineEvent_subset.gpkg $outputHucDataDir/flows_grid_boolean.tif
 Tcount
 
 ## RASTERIZE NHD HEADWATERS (1 & 0) ##
