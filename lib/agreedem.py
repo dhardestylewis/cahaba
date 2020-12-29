@@ -85,6 +85,8 @@ def agreedem(rivers_raster, dem, output_raster, workspace, grass_workspace, buff
     elev.close()
     rivers.close()
     raster.close()
+    
+    del elev, rivers, raster
     #------------------------------------------------------------------
     # 3. From Hellweger documentation: Compute the vector distance grids
     # (vectdist and vectallo). The cells in the vector distance grid
@@ -107,6 +109,7 @@ def agreedem(rivers_raster, dem, output_raster, workspace, grass_workspace, buff
     vectdist = rasterio.open(vectdist_grid)
     vectallo = rasterio.open(vectallo_grid)
     elev = rasterio.open(dem)
+    
 
     # Define bufgrid profile and output file.
     buf_output = os.path.join(workspace, 'agree_bufgrid.tif')
@@ -138,6 +141,8 @@ def agreedem(rivers_raster, dem, output_raster, workspace, grass_workspace, buff
     vectdist.close()
     vectallo.close()
     elev.close()
+    
+    del vectdist, vectallo, elev
     #------------------------------------------------------------------
     # 5. From Hellweger documentation: Compute the buffer distance grids
     # (bufdist and bufallo). The cells in the buffer distance grid

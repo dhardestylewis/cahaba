@@ -73,6 +73,3 @@ if __name__ == '__main__':
     
     # Run stream_pixel_zones
     stream_pixel_zones(stream_pixels, unique_stream_pixels, grass_workspace)
-
-
-
