@@ -1,6 +1,24 @@
 ## Cahaba: Flood Inundation Mapping for U.S. National Water Model
 
-Flood inundation mapping software configured to work with the U.S. National Water Model operated and maintained by the National Oceanic and Atmospheric Administration (NOAA) National Weather Service (NWS). Software enables inundation mapping capability by generating Relative Elevation Models (REMs) and Synthetic Rating Curves (SRCs). Included are tests to evaluate skill and computational efficiency as well as functions to generate inundation maps.
+Flood inundation mapping (FIM) software configured to work with the U.S. National Water Model operated and maintained by the National Oceanic and Atmospheric Administration (NOAA) National Weather Service (NWS). Software enables inundation mapping capability by generating Relative Elevation Models (REMs) and Synthetic Rating Curves (SRCs). Included are tests to evaluate skill and computational efficiency as well as functions to generate inundation maps.
+
+This project incorporates several steps:
+1. Build and run FIM Docker image/container
+    - A Dockerfile specifies the tools (and versions) to be used
+    - The Docker container is used in the following steps
+2. Generate inundation depth maps
+    - Download preprocess [give examples?] data
+    - Hydrocondition data to produce a FIM extent grid
+3. Evaluate inundation depth maps against benchmark data
+    - The FIM extent grid is compared to a benchmark dataset
+    - Contingency metrics are produced and common model performance statistics are computed
+
+----
+
+## Outputs
+
+Examples of outputs to be added here
+
 
 ----
 
@@ -8,17 +26,11 @@ Flood inundation mapping software configured to work with the U.S. National Wate
 
 Instructions for installing, configuring, and running the project can be found [here](INSTALL.md)
 
-
-## Outputs
-
-Examples of outputs to be added here
-
+----
 
 ## Getting Involved
 
 NOAA's National Water Center welcomes anyone to contribute to the Cahaba repository to improve flood inundation mapping capabilities. Please contact Fernando Aristizabal (fernando.aristizabal@noaa.gov) or Fernando Salas (fernando.salas@noaa.gov) to get started.
-
-----
 
 ## Open Source Licensing Info
 1. [TERMS](TERMS.md)
