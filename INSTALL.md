@@ -16,10 +16,10 @@ Detailed instructions on how to install, configure, and get the project running.
 
 If you have problems running the code, you may need to do the following steps:
 
-3. Create FIM group on host machine:
+- Create FIM group on host machine:
     - Linux: `groupadd -g 1370800178 fim`
     
-4. Change group ownership of repo (needs to be redone when a new file occurs in the repo):
+- Change group ownership of repo (needs to be redone when a new file occurs in the repo):
     - Linux: `chgrp -R fim <path/to/repository>`
 
 
