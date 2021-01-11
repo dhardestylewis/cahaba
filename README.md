@@ -3,11 +3,6 @@
 Flood inundation mapping software configured to work with the U.S. National Water Model operated and maintained by the National Oceanic and Atmospheric Administration (NOAA) National Weather Service (NWS). Software enables inundation mapping capability by generating Relative Elevation Models (REMs) and Synthetic Rating Curves (SRCs). Included are tests to evaluate skill and computational efficiency as well as functions to generate inundation maps.
 
 
-## Dependencies
-
-[Docker](https://docs.docker.com/get-docker/)
-
-
 ## Usage
 
 Instructions for installing, configuring, and running the project can be found [here](INSTALL.md)
