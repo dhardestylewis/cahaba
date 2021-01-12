@@ -24,13 +24,13 @@ Examples of outputs to be added here
 
 ## Installation and Usage
 
-Instructions for installing, configuring, and running the project can be found [here](INSTALL.md)
+Instructions for installing, configuring, and running the project can be found here: [INSTALL.md](INSTALL.md)
 
 ----
 
 ## Getting Involved
 
-NOAA's National Water Center welcomes anyone to contribute to the Cahaba repository to improve flood inundation mapping capabilities. Please contact Fernando Aristizabal (fernando.aristizabal@noaa.gov) or Fernando Salas (fernando.salas@noaa.gov) to get started.
+NOAA's National Water Center welcomes anyone to contribute to the Cahaba repository to improve flood inundation mapping capabilities. For more details see [CONTRIBUTING.md](CONTRIBUTING.md). Please contact Fernando Aristizabal (fernando.aristizabal@noaa.gov) or Fernando Salas (fernando.salas@noaa.gov) to get started.
 
 ## Open Source Licensing Info
 1. [TERMS](TERMS.md)
