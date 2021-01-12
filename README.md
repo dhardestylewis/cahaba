@@ -7,7 +7,7 @@ This project incorporates several steps:
     - A Dockerfile specifies the tools (and versions) to be used
     - The Docker container is used in the following steps
 2. Generate inundation depth maps
-    - Download preprocess [give examples?] data
+    - Download and preprocess data
     - Hydrocondition data to produce a FIM extent grid
 3. Evaluate inundation depth maps against benchmark data
     - The FIM extent grid is compared to a benchmark dataset
