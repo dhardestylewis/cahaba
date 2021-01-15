@@ -2,20 +2,40 @@
 
 Flood inundation mapping (FIM) software configured to work with the U.S. National Water Model operated and maintained by the National Oceanic and Atmospheric Administration (NOAA) National Weather Service (NWS). Software enables inundation mapping capability by generating Relative Elevation Models (REMs) and Synthetic Rating Curves (SRCs). Included are tests to evaluate skill and computational efficiency as well as functions to generate inundation maps.
 
-This project incorporates several steps:
-1. Build and run FIM Docker image/container
-    - A Dockerfile specifies the tools (and versions) to be used
+This project is organized as follows:
+1. Build and run cahaba/FIM Docker image/container
+    - A Dockerfile specifies the environment (software tools and versions)
     - The Docker container is used in the following steps
-2. Generate inundation depth maps
-    - Download and preprocess data
-    - Hydrocondition data to produce a FIM extent grid
-3. Evaluate inundation depth maps against benchmark data
-    - The FIM extent grid is compared to a benchmark dataset
-    - Contingency metrics are produced and common model performance statistics are computed
+2. Acquire and preprocess data
+    - Download input data
+    - Preprocess data
+        - Buffer HUC of interest
+        - Clip datasets to buffered HUC
+        - Rasterize vector layers
+    - Hydrocondition DEM
+        - Burn levees
+        - [AGREE](https://www.caee.utexas.edu/prof/maidment/gishydro/ferdi/research/agree/agree.html)
+        - Adjust thalweg
+    - Update stream network
+3. Make Relative Elevation Model (REM) grid
+    - Generate pixel catchments
+    - Level pixel catchments in each reach segment
+    - Use Height Above Nearest Drainage (HAND) to create REM grid
+4. Make Synthetic Rating Curve (SRC) to relate discharge to stage height
+    - Generate reach catchments
+    - Compute reach channel geometry
+    - Generate SRC based on Manning’s equation
+5. Generate inundation maps
+    - Given a discharge, use SRC to compute stage height
+    - Use stage height on REM grid to generate inundation maps
+
+Additionally, tools were developed to evaluate the inundation maps
+- The inundation map is compared to a benchmark dataset
+- Contingency metrics are produced and common model performance statistics are computed
 
 ----
 
-## Outputs
+## Results/Outputs
 
 Examples of outputs to be added here
 
@@ -24,7 +44,7 @@ Examples of outputs to be added here
 
 ## Installation and Usage
 
-Instructions for installing, configuring, and running the project can be found here: [INSTALL.md](INSTALL.md)
+Instructions for installing, configuring, and running the project can be found [here](INSTALL.md)
 
 ----
 
