@@ -4,34 +4,16 @@ Flood inundation mapping (FIM) software configured to work with the U.S. Nationa
 
 This project is organized as follows:
 1. Build and run cahaba/FIM Docker image/container
-    - A Dockerfile specifies the environment (software tools and versions)
-    - The Docker container is used in the following steps
-2. Acquire and preprocess data
-    - Download input data
-    - Preprocess data
-        - Buffer HUC of interest
-        - Clip datasets to buffered HUC
-        - Rasterize vector layers
-    - Hydrocondition DEM
-        - Burn levees
-        - [AGREE](https://www.caee.utexas.edu/prof/maidment/gishydro/ferdi/research/agree/agree.html)
-        - Adjust thalweg
-    - Update stream network
+2. Acquire and preprocess data, including hydroconditioning
 3. Make Relative Elevation Model (REM) grid
-    - Generate pixel catchments
-    - Level pixel catchments in each reach segment
-    - Use Height Above Nearest Drainage (HAND) to create REM grid
 4. Make Synthetic Rating Curve (SRC) to relate discharge to stage height
-    - Generate reach catchments
-    - Compute reach channel geometry
-    - Generate SRC based on Manning’s equation
 5. Generate inundation maps
-    - Given a discharge, use SRC to compute stage height
-    - Use stage height on REM grid to generate inundation maps
 
 Additionally, tools were developed to evaluate the inundation maps
 - The inundation map is compared to a benchmark dataset
 - Contingency metrics are produced and common model performance statistics are computed
+
+For more detail, see [here](METHODS.md)
 
 ----
 
