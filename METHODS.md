@@ -2,7 +2,7 @@
 
 The steps and the scripts that produce them
 
-1. Build cahaba Docker image and run Docker container [[Dockerfile](Dockerfile.dev)]
+1. Build cahaba Docker image and run Docker container [[Dockerfile.prod](Dockerfile.prod)]
     - A Dockerfile specifies the environment (software tools and versions)
     - The Docker container is used in the following steps
 2. Acquire and preprocess data [[acquire_and_preprocess_inputs.py](lib/acquire_and_preprocess_inputs.py)]
@@ -29,3 +29,6 @@ The steps and the scripts that produce them
     - Given a discharge, use SRC to compute stage height
     - Use stage height on REM grid to generate inundation maps
 
+5. Evaluate the inundation maps [[run_test_case.py](tests/run_test_case.py)]
+    - The inundation map is compared to a benchmark dataset
+    - Contingency metrics are produced and common model performance statistics are computed
