@@ -3,7 +3,7 @@
 Flood inundation mapping (FIM) software configured to work with the U.S. National Water Model operated and maintained by the National Oceanic and Atmospheric Administration (NOAA) National Weather Service (NWS). Software enables inundation mapping capability by generating Relative Elevation Models (REMs) and Synthetic Rating Curves (SRCs). Included are tests to evaluate skill and computational efficiency as well as functions to generate inundation maps.
 
 This project is organized as follows:
-1. Build and run cahaba/FIM Docker image/container
+1. Build cahaba Docker image and run Docker container
 2. Acquire and preprocess data, including hydroconditioning
 3. Use Height Above Nearest Drainage (HAND) to make Relative Elevation Model (REM)
 4. Make Synthetic Rating Curve (SRC) to relate discharge to stage height
