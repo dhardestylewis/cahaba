@@ -5,9 +5,10 @@ Flood inundation mapping (FIM) software configured to work with the U.S. Nationa
 This project is organized as follows:
 1. Build cahaba Docker image and run Docker container
 2. Acquire and preprocess data, including hydroconditioning
-3. Use Height Above Nearest Drainage (HAND) to make Relative Elevation Model (REM)
-4. Make Synthetic Rating Curve (SRC) to relate discharge to stage height
-5. Generate inundation maps
+3. Produce model datasets required for inundation mapping
+    - Use Height Above Nearest Drainage (HAND) to make Relative Elevation Model (REM)
+    - Make Synthetic Rating Curve (SRC) to relate discharge to stage height
+4. Generate inundation maps
 
 Additionally, tools were developed to evaluate the inundation maps
 - The inundation map is compared to a benchmark dataset
