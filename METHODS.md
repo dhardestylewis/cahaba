@@ -2,7 +2,7 @@
 
 The steps and the scripts that produce them
 
-1. Build cahaba Docker image and run Docker container [[Dockerfile.prod](Dockerfile.prod)]
+1. Build cahaba Docker image and run Docker container [[Dockerfile.dev](Dockerfile.dev)]
     - A Dockerfile specifies the environment (software tools and versions)
     - The Docker container is used in the following steps
 2. Acquire and preprocess data [[acquire_and_preprocess_inputs.py](lib/acquire_and_preprocess_inputs.py)]
