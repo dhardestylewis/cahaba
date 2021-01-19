@@ -14,7 +14,7 @@ The steps and the scripts that produce them
 3. Produce model datasets required for inundation mapping [[run_by_unit.sh](lib/run_by_unit.sh)]
     - Hydrocondition DEM
         - Burn levees
-        - Recondition surface (using [AGREE](https://www.caee.utexas.edu/prof/maidment/gishydro/ferdi/research/agree/agree.html))
+        - Recondition surface
         - Adjust thalweg
         - Update stream network
     - Make Relative Elevation Model (REM)
