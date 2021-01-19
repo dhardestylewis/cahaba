@@ -29,6 +29,6 @@ The steps and the scripts that produce them
     - Given a discharge, use SRC to compute stage height
     - Use stage height on REM grid to generate inundation maps
 
-5. Evaluate the inundation maps [[run_test_case.py](tests/run_test_case.py)]
+5. (Optional) Evaluate the inundation maps [[run_test_case.py](tests/run_test_case.py)]
     - The inundation map is compared to a benchmark dataset
     - Contingency metrics are produced and common model performance statistics are computed
