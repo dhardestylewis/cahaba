@@ -2,7 +2,7 @@
 
 The steps and the scripts that produce them
 
-1. Build and run cahaba/FIM Docker image/container [Dockerfile]
+1. Build cahaba Docker image and run Docker container [Dockerfile]
     - A Dockerfile specifies the environment (software tools and versions)
     - The Docker container is used in the following steps
 2. Acquire and preprocess data [acquire_and_preprocess_inputs.py]
@@ -16,7 +16,7 @@ The steps and the scripts that produce them
     - Recondition surface (using [AGREE](https://www.caee.utexas.edu/prof/maidment/gishydro/ferdi/research/agree/agree.html))
     - Adjust thalweg
     - Update stream network
-3. Make Relative Elevation Model (REM) grid [run_by_unit.sh]
+3. Make Relative Elevation Model (REM) [run_by_unit.sh]
     - Generate pixel catchments
     - Level pixel catchments in each reach segment
     - Use Height Above Nearest Drainage (HAND) to create REM grid
