@@ -6,7 +6,7 @@ import shutil
 import argparse
 
 from utils.shared_functions import compute_contingency_stats_from_rasters
-from utils.shared_variables import (TEST_CASES_DIR, INPUTS_DIR, ENDC, TRED_BOLD, WHITE_BOLD, CYAN_BOLD, AHPS_BENCHMARK_CATEGORIES)
+from utils.shared_variables import (TEST_CASES_DIR, INPUTS_DIR, ENDC, TRED_BOLD, WHITE_BOLD, CYAN_BOLD, AHPS_BENCHMARK_CATEGORIES, MAGNITUDE_DICTIONARY)
 from inundation import inundate
 
 
@@ -88,7 +88,6 @@ def run_alpha_test(fim_run_dir, version, test_id, magnitude, compare_to_previous
         version_test_case_dir = os.path.join(version_test_case_dir_parent, magnitude)
         if not os.path.exists(version_test_case_dir):
             os.mkdir(version_test_case_dir)
-    
         # Construct path to validation raster and forecast file.
         if benchmark_category in AHPS_BENCHMARK_CATEGORIES:
             benchmark_raster_path_list, forecast_list = [], []
@@ -128,6 +127,11 @@ def run_alpha_test(fim_run_dir, version, test_id, magnitude, compare_to_previous
                     continue
             else:  # If not in AHPS_BENCHMARK_CATEGORIES.
                 if not os.path.exists(benchmark_raster_path) or not os.path.exists(forecast):  # Skip loop instance if the benchmark raster doesn't exist.
+                    print(benchmark_raster_path)
+                    print(os.path.exists(benchmark_raster_path))
+                    print(forecast)
+                    print(os.path.exists(forecast))
+                    print("no")
                     continue
             # Run inundate.
             print("-----> Running inundate() to produce modeled inundation extent for the " + magnitude + " magnitude...")
@@ -230,9 +234,11 @@ if __name__ == '__main__':
 
     if args['magnitude'] == '':
         if 'ble' in args['test_id'].split('_'):
-            args['magnitude'] = ['100yr', '500yr']
-        elif 'nws' or 'usgs' in args['test_id'].split('_'):
-            args['magnitude'] = ['action', 'minor', 'moderate', 'major']
+            args['magnitude'] = MAGNITUDE_DICTIONARY['ble']
+        if 'nws' or 'usgs' in args['test_id'].split('_'):
+            args['magnitude'] = MAGNITUDE_DICTIONARY['nws']
+        if 'ifc' in args['test_id'].split('_'):
+            args['magnitude'] = MAGNITUDE_DICTIONARY['ifc']
         else:
             print(TRED_BOLD + "Error: " + WHITE_BOLD + "The provided magnitude (-y) " + CYAN_BOLD + args['magnitude'] + WHITE_BOLD + " is invalid. ble options include: 100yr, 500yr. ahps options include action, minor, moderate, major." + ENDC)
             exit_flag = True     
