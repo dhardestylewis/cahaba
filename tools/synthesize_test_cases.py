@@ -7,7 +7,7 @@ import json
 import csv
 
 from run_test_case import run_alpha_test
-from utils.shared_variables import TEST_CASES_DIR, PREVIOUS_FIM_DIR, OUTPUTS_DIR, AHPS_BENCHMARK_CATEGORIES
+from utils.shared_variables import TEST_CASES_DIR, PREVIOUS_FIM_DIR, OUTPUTS_DIR, AHPS_BENCHMARK_CATEGORIES, BENCHMARK_CATEGORIES, FR_BENCHMARK_CATEGORIES, MAGNITUDE_DICTIONARY
 
 
 def create_master_metrics_csv(master_metrics_csv_output):
@@ -61,11 +61,14 @@ def create_master_metrics_csv(master_metrics_csv_output):
     
     versions_to_aggregate = os.listdir(PREVIOUS_FIM_DIR)
     
-    for benchmark_source in ['ble', 'nws', 'usgs']:
+    for benchmark_source in BENCHMARK_CATEGORIES:
+        
+        # Get magnitude_list from MAGNITUDE_DICTIONARY.
+        magnitude_list = MAGNITUDE_DICTIONARY[benchmark_source]
         
         benchmark_test_case_dir = os.path.join(TEST_CASES_DIR, benchmark_source + '_test_cases')
         
-        if benchmark_source == 'ble':
+        if benchmark_source in FR_BENCHMARK_CATEGORIES:
             test_cases_list = os.listdir(benchmark_test_case_dir)
                             
             for test_case in test_cases_list:
@@ -75,7 +78,7 @@ def create_master_metrics_csv(master_metrics_csv_output):
                     huc = test_case.split('_')[0]
                     official_versions = os.path.join(benchmark_test_case_dir, test_case, 'official_versions')
                     
-                    for magnitude in ['100yr', '500yr']:
+                    for magnitude in magnitude_list:
                         for version in versions_to_aggregate:
                             if '_fr' in version:
                                 extent_config = 'FR'
@@ -123,7 +126,7 @@ def create_master_metrics_csv(master_metrics_csv_output):
                     huc = test_case.split('_')[0]
                     official_versions = os.path.join(benchmark_test_case_dir, test_case, 'official_versions')
                     
-                    for magnitude in ['action', 'minor', 'moderate', 'major']:
+                    for magnitude in magnitude_list:
                         for version in versions_to_aggregate:
                             if '_fr' in version:
                                 extent_config = 'FR'
