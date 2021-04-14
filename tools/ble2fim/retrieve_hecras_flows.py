@@ -42,6 +42,12 @@ def get_hec_ras_flows(flow_file):
                 [profile_name_key, *profile_names] = re.split('=|,',line)
                 profile_names = [name.strip() for name in profile_names]
                 
+                #flow lines only contain 10 flow values before wrapping to next line. This script
+                #only retrieves the first line of flows. Only flows with the first 10 profile 
+                #names are retrieved.
+                if len(profile_names) > 10:
+                    profile_names = profile_names[0:9]
+                
             #Get the flow values
             if line.startswith('River Rch & RM='):
                 #Get line with river/reach/xs information
